@@ -4,13 +4,13 @@ function routing() {
                   /*Parametros del mapa para la funcion map */
 
       /*var marker_position= new google.maps.LatLng(44.5403, -78.5463);*/
-      var marker_position=new google.maps.LatLng(10.980073, -63.823687)
+      var marker_position=new google.maps.LatLng(10.979885, -63.823678)
       /*"Conjunto Isla del Rey, Porlamar"*/;
 
       var mapOptions = {
 
         center:marker_position ,
-        zoom:16,
+        zoom:14,
         mapTypeId: google.maps.MapTypeId.ROADMAP
 
       };
