@@ -1,11 +1,11 @@
 function routing() {
 
 
-                  /*Parametros del mapa para la funcion map */
 
-      /*var marker_position= new google.maps.LatLng(44.5403, -78.5463);*/
+
+      /*Creo la posicion inicial de todos los mapas y del marker al cargar el mapa
+      por primera vez*/
       var marker_position=new google.maps.LatLng(10.979885, -63.823678)
-      /*"Conjunto Isla del Rey, Porlamar"*/;
 
       var mapOptions = {
 
@@ -15,7 +15,8 @@ function routing() {
 
       };
 
-
+      /*creo el service de google maps que me permite buscar la ruta deseada desde el
+      punto de inicio*/
       var directionsService = new google.maps.DirectionsService;
       var directionsDisplay = new google.maps.DirectionsRenderer;
 
@@ -27,13 +28,19 @@ function routing() {
       var marker=new google.maps.Marker({ position:marker_position,});
 
 
-
+      /*Coloco el marker en el mapa */
       marker.setMap(map);
+
+      /*Esto lo uso para indicar donde se dibujara el recorrido */
       directionsDisplay.setMap(map);
 
       var buttons = document.getElementsByTagName("button");
 
       var buttonsCount = buttons.length;
+
+
+      /*Coloco el event handler en todos los botones y ademas corro la funcion
+      route la cual genera el corrido del punto inicial al destino*/
 
       for (var i = 0; i <= buttonsCount; i += 1) {
 
@@ -62,27 +69,12 @@ function routing() {
           };
       }
 
-      /*var onClickHandler = function() {
-        calculateRoute(directionsService, directionsDisplay);
-      };
-
-      document.getElementById('uno').addEventListener('click', onClickHandler);
-      document.getElementById('dos').addEventListener('click', onClickHandler);*/
 
 
 }
 
 google.maps.event.addDomListener(window, 'load', routing);
 
-/*function calculateRoute(directionsService, directionsDisplay) {
-
-
-
-
-
-
-}
-*/
 
 
 
